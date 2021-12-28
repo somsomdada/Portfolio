@@ -627,3 +627,14 @@ html[data-current-page-index="0"] .page-indicator {
   .page-indicator { right: 10%; }
   .main .layout-txt { left: 10%; }
 }
+@media screen and (max-width: 768px) {
+  .main .hd .menu .logo {
+    width: 11.719vw;
+    margin-left: 2.604vw;
+  }
+  .hamburger-menu {
+    margin-right: 2.604vw;
+  }
+  .page-indicator { right: 5%; }
+  .main .layout-txt { left: 5%; }
+}
