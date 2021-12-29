@@ -787,11 +787,11 @@ html[data-current-page-index="0"] .page-indicator {
     margin-top: 50px;
   }
   .port .port-list .list-item .list-box .txt-box {
-    font-size: 13px;
+    font-size: 8px;
     padding-top: 22px;
   }
   .port .port-list .list-item .list-box .txt-box .tit {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   .port .port-list .list-item .list-box .txt-box .tit span {
     border-radius: 10px;
@@ -802,7 +802,7 @@ html[data-current-page-index="0"] .page-indicator {
   }
   .port .port-list .list-item .list-box .txt-box .desc button {
     border-radius: 10px;
-    font-size: 13px;
+    font-size: 8px;
     padding: 5px 10px;
   }
 
