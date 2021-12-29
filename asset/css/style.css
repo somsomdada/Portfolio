@@ -647,7 +647,7 @@ html[data-current-page-index="0"] .page-indicator {
     margin-right: 30px;
   }
 
-  .main .layout-txt { left: 5%; }
+  .main .layout-txt { left: 7%; }
   
   /* visual */
   .main .visual .visual-txt {
@@ -844,7 +844,7 @@ html[data-current-page-index="0"] .page-indicator {
     font-size: 20px;
   }
   /* indicate menu */
-  .page-indicator { right: 5%; }
+  .page-indicator { right: 7%; }
   .page-indicator ul li  a {
     width:8px; height:8px;
   }
