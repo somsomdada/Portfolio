@@ -90,8 +90,7 @@ section {
   transform: rotate(135deg);
 }
 
-
-
+/* kv-background */
 .kv-bg {
   /* width: 100vw; */
   height: 100vh;
@@ -99,7 +98,6 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .main .layout-txt {
   position: fixed;
   top:50%;
@@ -111,7 +109,59 @@ section {
   text-orientation: upright;
   
 }
+.main .scroll-wrap {
+  display: inline-block;
+  position: absolute; left: 50%; bottom: 20%;
+  transform: translateX(-50%);
+}
+.main .scroll {
+  position: relative;
+}
 
+@keyframes scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(15px); }
+}
+
+.main .scroll-star {
+  display: block;
+  width: 15px;
+  animation-name: scroll;
+  animation-duration: 0.6s;
+  animation-play-state: running;
+  /* 종료 후 시작 방향 */
+  animation-direction: alternate; 
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.main .scroll-star::after {
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  content: "";
+  width: 20px; height: 20px;
+  border-left: 2px solid  #fff; 
+  border-bottom: 2px solid  #fff;
+  transform: translateX(-50%) rotate(-45deg);
+}
+.main .scroll-txt {
+  position: absolute;
+  min-width: 200px;
+  text-align: center;
+  left: 50%; bottom: -90px;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: #fff;
+  z-index: 3;
+  letter-spacing: 4px;
+  animation: 0.6s ease infinite alternate  scroll-down;
+}
+
+@keyframes scroll-down {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 /* visual */
 .main .visual .visual-txt {
@@ -217,18 +267,6 @@ section {
 
 /* 텍스트 */
 
-/* 첫번째거만 가운데 정렬로 */
-/* .about .profile .profile-list:first-child .pro-txt {
-  display: block;
-  text-align: center;
-}
-.about .profile .profile-list:first-child .pro-txt .tit {
-  display: block;
-}
-.about .profile .profile-list:first-child .pro-txt .desc { padding: 15px  0;}
-.about .profile .profile-list:first-child .pro-txt .desc .txt-box {
-  margin: auto;
-} */
 
 .about .profile .profile-list .pro-txt {
   display: flex;
@@ -629,85 +667,99 @@ html[data-current-page-index="0"] .page-indicator {
 }
 @media screen and (max-width: 768px) {
   .main .hd .menu .logo {
-    width: 11.719vw;
-    margin-left: 2.604vw;
+    width: 13.021vw;
+    margin-left: 4.036vw;
   }
   
   /* hd */
-  .main .hd { padding-top: 50px; }
+  .main .hd { padding-top: 6.51vw; }
   .main .hd .menu ul {
-    font-size: 18px;
+    font-size: 2.864vw;
   }
   .main .hd .menu ul li + li {
-    margin-left: 40px;
+    margin-left: 6.64vw;
   }
   
   /* button menu */
   .hamburger-menu {
-    margin-right: 30px;
+    margin-right: 4.036vw;
   }
 
+  /* main layout */
   .main .layout-txt { left: 7%; }
-  
+  .main .scroll-star { width: 1.953vw; }
+  .main .scroll-star::after {
+    bottom: -2.604vw;
+    width: 2.604vw; height: 2.604vw;
+  }
+  .main .scroll-txt {
+    /* 얘 긴가민가 */
+    min-width: 26.042vw;
+    bottom: -11.719vw;
+    font-size: 2.344vw;
+  }
+
   /* visual */
   .main .visual .visual-txt {
-    font-size: 40px;
+    font-size: 5.208vw;
   }
   .main .visual .strong {
-    font-size: 50px;
+    font-size: 6.51vw;
   }
 
   /* content */
-  .cont-tit { margin: 80px 0;}
-  .cont-tit-txt { font-size: 40px; letter-spacing: 5px; }
+  .cont-tit { margin: 10.417vw 0;}
+  .cont-tit-txt { font-size: 5.208vw; letter-spacing: 5px; }
   .cont-tit .tit-line img {
-    margin: 0 5px;
-    width: 20px;
+    margin: 0 0.651vw;
+    width: 2.604vw;
   }
 
   /* about */
   .about .profile {
-    flex-wrap: wrap;
-    padding: 0 100px;
+    display: block;
+    padding: 0 13.021vw;
   }
   .about .profile .profile-list {
-    flex: 1 50%;
+    display: flex;
+    justify-content: flex-start;
   }
-  .about .profile .profile-list:nth-child(3) {
-    margin-top: 40px;
+  .about .profile .profile-list + .profile-list {
+    margin-top: 7.813vw;
   }
   .about .profile .profile-list .profile-img {
-    width: 120px; height: 120px;
+    width: 15.625vw; height: 15.625vw;
+    margin: 0 60px 0 10.417vw;
   }
   /* 텍스트 */
   .about .profile .profile-list .pro-txt {
-    padding-top: 30px;
+    padding-top: 3.906vw;
   }
   .about .profile .profile-list .tit-deco {
-    font-size: 16px;
+    font-size: 2.083vw;
   }
   .about .profile .profile-list .pro-txt .tit li + li {
-    margin-top: 10px;
+    margin-top: 1.302vw;
   }
   .about .profile .profile-list .pro-txt .desc {
-    font-size: 15px;
-    padding-left: 15px;
+    font-size: 1.953vw;
+    padding-left: 1.953vw;
   }
   .about .profile .profile-list .pro-txt .desc li + li {
-    padding-top: 7px;
+    padding-top: 0.911vw;
   }
   .about .profile .profile-list:nth-child(1) .desc .txt-box {
-    font-size: 16px;
-    width: 140px;
+    font-size: 2.083vw;
+    width: 18.229vw;
   }
 
   /* skill */
   .skill .skill-cont {
-    margin-top: 80px;
+    margin-top: 18.229vw;
   }
   .skill .skill-cont .skill-list {
     flex-wrap: wrap;
-    max-width: 400px;
+    max-width: 399.997px;
     margin: auto;
   }
   .skill .skill-cont .skill-list .list-item:hover .skill-tooltip {
@@ -719,14 +771,14 @@ html[data-current-page-index="0"] .page-indicator {
   }
   .skill .skill-cont .skill-list li:nth-child(4),
   .skill .skill-cont .skill-list li:nth-child(5){
-    margin-top: 80px;
+    margin-top: 10.417vw;
   }
   .skill .skill-cont .skill-list li:nth-child(5) {
-    margin-right: 50px;
+    margin-right: 6.51vw;
   }
   .skill .skill-cont .skill-list .list-item .item-bg {
-    width: 100px;
-    height: 100px;
+    width: 13.021vw;
+    height: 13.021vw;
     border: 2px solid #9438ff;
   }
   .skill .skill-cont .skill-list .list-item img {
@@ -734,47 +786,47 @@ html[data-current-page-index="0"] .page-indicator {
   }
   .skill .skill-cont .skill-list .list-item:nth-child(4) img,
   .skill .skill-cont .skill-list .list-item:nth-child(5) img { 
-    padding: 10px;
+    padding: 1.302vw;
   }
   .skill .skill-cont .skill-list .list-item:hover img {
     width: 75%;
   }
   .skill .skill-cont .skill-list .skill-tooltip {
-    padding-top: 20px;
+    padding-top: 2.604vw;
   }
   .skill .skill-cont .skill-list .skill-tooltip p {
     display: flex;
     flex-direction: column;
     background-color: #3a3a57;
-    padding: 15px 15px;
-    border-radius: 20px;
-    width: 180px;
+    padding: 1.953vw 1.953vw;
+    border-radius: 2.604vw;
+    width: 23.438vw;
   }
   .skill .skill-cont .skill-list .skill-tooltip p::before {
     top: 1px;
-    border-width: 10px;
+    border-width: 1.302vw;
   }
   .skill .skill-cont .skill-list .skill-tooltip .tool-tit {
-    font-size: 14px;
+    font-size: 1.823vw;
   }
   .skill .skill-cont .skill-list .skill-tooltip .bar {
-    height: 12px;
+    height: 1.563vw;
     background-color: #a59fcf;
-    border-radius: 10px;
-    margin: 15px 0;
+    border-radius: 1.302vw;
+    margin: 1.953vw 0;
   }
   .skill .skill-cont .skill-list .skill-tooltip .bar::after {
-    height: 12px;
-    border-radius: 10px;
+    height: 1.563vw;
+    border-radius: 1.302vw;
   }
   .skill .skill-cont .skill-list .list-item:hover .skill-tooltip .tool-desc {
-    font-size: 12px;
+    font-size: 1.563vw;
   }
 
   /* portfolio */
   .port .port-list {
-    max-width: 250px;
-    margin-top: 80px;
+    max-width: 32.552vw;
+    margin-top: 10.417vw;
     flex-wrap: wrap;
     flex-direction: column;
     margin: auto;
@@ -784,70 +836,70 @@ html[data-current-page-index="0"] .page-indicator {
    }
    .port .port-list li + li {
     margin-left: 0;
-    margin-top: 50px;
+    margin-top: 6.51vw;
   }
   .port .port-list .list-item .list-box .txt-box {
-    font-size: 8px;
-    padding-top: 22px;
+    font-size: 1.042vw;
+    padding-top: 2.865vw;
   }
   .port .port-list .list-item .list-box .txt-box .tit {
-    margin-bottom: 15px;
+    margin-bottom: 1.953vw;
   }
   .port .port-list .list-item .list-box .txt-box .tit span {
-    border-radius: 10px;
-    padding: 2px 8px;
+    border-radius: 1.302vw;
+    padding: 0.26vw 1.042vw;
   }
   .port .port-list .list-item .list-box .txt-box .tit span + span {
-    margin-left: 10px;
+    margin-left: 1.302vw;
   }
   .port .port-list .list-item .list-box .txt-box .desc button {
-    border-radius: 10px;
-    font-size: 8px;
-    padding: 5px 10px;
+    border-radius: 1.302vw;
+    font-size: 1.042vw;
+    padding: 0.651vw 1.302vw;
   }
 
   /* contact */
   .contact .contact-cont .diamond {
-    width: 250px;
-    height: 250px;
+    width: 32.552vw;
+    height: 32.552vw;
    }
   .contact .contact-cont:hover .diamond {
-    width: 270px;
-    height: 270px;
+    width: 35.156vw;
+    height: 35.156vw;
   }
   .contact .contact-cont h2 { 
-    font-size: 22px;
+    font-size: 2.865vw;
     letter-spacing: -0.5px;
   }
   .contact .copyrights span {
-    font-size: 12px;
+    font-size: 1.563vw;
   }
   
   /* modal */
   .modal .modal-box {
     position: relative;
-    width: 600px;
-    height: 340px;
+    width: 78.125vw;
+    height: 44.271vw;
   }
   .modal .modal-box .modal-img a {
-    right: 20px; bottom: 30px;
-    font-size: 12px;
-    padding: 5px 10px;
+    right: 2.604vw; bottom: 29.998px;
+    font-size: 1.563vw;
+    padding: 0.651vw 1.302vw;
   }
   .modal:nth-child(2) .modal-box .modal-img a {
-    right: 55px; bottom: 25px;
-    font-size: 10px;
-    padding: 2px 10px;
+    right: 7.161vw; bottom: 3.255vw;
+    font-size: 1.302vw;
+    padding: 0.26vw 1.302vw;
   }
   .modal .modal-box .close-modal {
-    top: -30px; right: 0;
-    font-size: 20px;
+    top: -3.906vw; right: 0;
+    font-size: 2.604vw;
   }
   /* indicate menu */
   .page-indicator { right: 7%; }
   .page-indicator ul li  a {
-    width:8px; height:8px;
+    width:1.042vw; height:1.042vw;
   }
-  .page-indicator ul li + li { margin-top:16px; }
+  .page-indicator ul li + li { margin-top:2.083vw; }
   
 } 
