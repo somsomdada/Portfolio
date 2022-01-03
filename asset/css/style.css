@@ -803,7 +803,7 @@ html[data-current-page-index="0"] .page-indicator {
     width: 23.438vw;
   }
   .skill .skill-cont .skill-list .skill-tooltip p::before {
-    top: 1px;
+    top: 0.13vw;
     border-width: 1.302vw;
   }
   .skill .skill-cont .skill-list .skill-tooltip .tool-tit {
