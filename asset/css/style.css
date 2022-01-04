@@ -151,7 +151,7 @@ section {
   text-align: center;
   left: 50%; bottom: -90px;
   transform: translateX(-50%);
-  font-size: 18px;
+  font-size: 16px;
   color: #fff;
   z-index: 3;
   letter-spacing: 4px;
@@ -583,7 +583,7 @@ section {
 .modal .modal-box .modal-img { position:  relative; }
 .modal .modal-box .modal-img a {
   position: absolute;
-  right: 30px; bottom: 30px;
+  right: 130px; bottom: 55px;
   font-size: 18px;
   border: 1px solid #fff;
   padding: 5px 10px;
@@ -592,10 +592,7 @@ section {
   background-color: #fff;
   color: #3a3a57;
 }
-.modal:nth-child(2) .modal-box .modal-img a {
-  right: 150px; bottom: 30px;
-  font-size: 14px;
-}
+
 .modal .modal-box .close-modal {
   position: absolute;
   top: -30px; right: 0px;
@@ -608,13 +605,13 @@ section {
   background-repeat: no-repeat;
 } 
 .modal:nth-child(1) .modal-box .modal-img {
-  background-image: url(../images/modal-image-1.png);
+  background-image: url(../images/modal-img-1.png);
 }
 .modal:nth-child(2) .modal-box .modal-img {
-  background-image: url(../images/modal-image-2.png);
+  background-image: url(../images/modal-img-2.png);
 } 
 .modal:nth-child(3) .modal-box .modal-img {
-  background-color: slateblue;
+  background-image: url(../images/modal-img-3.png);
 }
 .modal.on {
   opacity: 1;
@@ -709,58 +706,65 @@ html[data-current-page-index="0"] .page-indicator {
 
   /* content */
   .cont-tit { margin: 10.417vw 0;}
-  .cont-tit-txt { font-size: 5.208vw; letter-spacing: 5px; }
+  .cont-tit-txt { font-size: 6.208vw; letter-spacing: 5px; }
   .cont-tit .tit-line img {
     margin: 0 0.651vw;
     width: 2.604vw;
   }
 
   /* about */
+  .about { position: relative; }
   .about .profile {
     display: block;
     padding: 0 13.021vw;
+    margin-top: 7.813vw;
+    position: absolute; top: 50%;
+    transform: translateY(-50%);
   }
   .about .profile .profile-list {
     display: flex;
     justify-content: flex-start;
   }
   .about .profile .profile-list + .profile-list {
-    margin-top: 7.813vw;
+    margin-top: 10.813vw;
   }
   .about .profile .profile-list .profile-img {
-    width: 15.625vw; height: 15.625vw;
-    margin: 0 60px 0 10.417vw;
+    width: 20.625vw; height: 20.625vw;
+    margin: 0 6.813vw 0 6.417vw;
   }
   /* 텍스트 */
   .about .profile .profile-list .pro-txt {
-    padding-top: 3.906vw;
+    padding-top: 5.906vw;
   }
   .about .profile .profile-list .tit-deco {
-    font-size: 2.083vw;
+    padding: 0 0.651vw;
+    font-size: 2.603vw;
   }
   .about .profile .profile-list .pro-txt .tit li + li {
     margin-top: 1.302vw;
   }
   .about .profile .profile-list .pro-txt .desc {
-    font-size: 1.953vw;
-    padding-left: 1.953vw;
+    font-size: 2.214vw;
+    padding-left: 2.953vw;
   }
   .about .profile .profile-list .pro-txt .desc li + li {
     padding-top: 0.911vw;
   }
   .about .profile .profile-list:nth-child(1) .desc .txt-box {
-    font-size: 2.083vw;
-    width: 18.229vw;
+    font-size: 2.344vw;
+    width: 27.344vw;
   }
 
   /* skill */
+  .skill { position: relative; }
   .skill .skill-cont {
-    margin-top: 18.229vw;
+    margin-top: 0;
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
   }
   .skill .skill-cont .skill-list {
     flex-wrap: wrap;
-    max-width: 399.997px;
-    margin: auto;
+    width: 67.083vw;
   }
   .skill .skill-cont .skill-list .list-item:hover .skill-tooltip {
     visibility: visible;
@@ -771,14 +775,14 @@ html[data-current-page-index="0"] .page-indicator {
   }
   .skill .skill-cont .skill-list li:nth-child(4),
   .skill .skill-cont .skill-list li:nth-child(5){
-    margin-top: 10.417vw;
+    margin-top: 12.417vw;
   }
   .skill .skill-cont .skill-list li:nth-child(5) {
     margin-right: 6.51vw;
   }
   .skill .skill-cont .skill-list .list-item .item-bg {
-    width: 13.021vw;
-    height: 13.021vw;
+    width: 15.021vw;
+    height: 15.021vw;
     border: 2px solid #9438ff;
   }
   .skill .skill-cont .skill-list .list-item img {
@@ -798,16 +802,16 @@ html[data-current-page-index="0"] .page-indicator {
     display: flex;
     flex-direction: column;
     background-color: #3a3a57;
-    padding: 1.953vw 1.953vw;
+    padding: 1.953vw 3.953vw;
     border-radius: 2.604vw;
-    width: 23.438vw;
+    width: 28.438vw;
   }
   .skill .skill-cont .skill-list .skill-tooltip p::before {
     top: 0.13vw;
     border-width: 1.302vw;
   }
   .skill .skill-cont .skill-list .skill-tooltip .tool-tit {
-    font-size: 1.823vw;
+    font-size: 2.344vw;
   }
   .skill .skill-cont .skill-list .skill-tooltip .bar {
     height: 1.563vw;
@@ -820,16 +824,18 @@ html[data-current-page-index="0"] .page-indicator {
     border-radius: 1.302vw;
   }
   .skill .skill-cont .skill-list .list-item:hover .skill-tooltip .tool-desc {
-    font-size: 1.563vw;
+    font-size: 1.823vw;
   }
 
   /* portfolio */
+  .port  { position: relative; }
   .port .port-list {
-    max-width: 32.552vw;
+    max-width: 39.063vw;
     margin-top: 10.417vw;
     flex-wrap: wrap;
     flex-direction: column;
-    margin: auto;
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
   }
   .port .port-list .list-item {
     flex: 1 100% ;
@@ -903,3 +909,29 @@ html[data-current-page-index="0"] .page-indicator {
   .page-indicator ul li + li { margin-top:2.083vw; }
   
 } 
+@media screen and (max-width: 460px) {
+  
+  /* about */
+  .about .profile {
+    margin-top: 0; 
+  }
+  /* skill */
+  .skill .skill-cont .skill-list {
+    flex: 1 100%;
+    width: 0;
+  }
+  .skill .skill-cont .skill-list li + li {
+    margin-left: 0; margin-top: 30px;
+  }
+  .skill .skill-cont .skill-list li:nth-child(4),
+  .skill .skill-cont .skill-list li:nth-child(5){
+    margin-top:30px; margin-right: 0;
+  }
+
+  /* portfolio */
+  
+  .port .port-list {
+    max-width: none;
+    margin-top: 0; 
+  }
+}
