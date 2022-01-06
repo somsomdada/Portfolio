@@ -453,6 +453,10 @@ section {
 .port .port-list .list-item .list-box {
   position: relative;
 }
+.port .port-list .list-item .list-box img {
+  /* bottom: 0 해도 여백생긴거는 img가 인라인태그라서 사이 여백 생김 */
+  display: block;
+}
 .port .port-list .list-item .list-box .txt-box {
   position: absolute;
   left: 0; bottom: 0;
@@ -633,9 +637,9 @@ section {
 }
 
 .page-indicator ul li  a {
-display:block;
-width:8px; height:8px; background-color:#fff;
-border-radius: 10px;
+  display:block;
+  width:8px; height:8px; background-color:#fff;
+  border-radius: 10px;
 }
 
 .page-indicator ul li + li { margin-top:16px; }
