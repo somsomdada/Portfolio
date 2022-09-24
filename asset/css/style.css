@@ -104,6 +104,7 @@ section {
   left:100px;
   transform:translateY(-50%);
   color: #fff;
+  font-size: 17px;
   z-index: 2;
   writing-mode: vertical-rl;
   text-orientation: upright;
@@ -648,8 +649,7 @@ section {
 background-color:#9438ff;
 }
 
-/*  모르는 속성  */
-/* 최근페이지(첫페이지) 인디케이터 위치를 0으로 바꿔주는 거 였던 듯 */
+/* 최근페이지(첫페이지) 인디케이터 위치를 0으로 바꿔주는 거*/
 html[data-current-page-index="0"] .page-indicator {
   transform:translateY(-50%);
 } 
@@ -687,14 +687,13 @@ html[data-current-page-index="0"] .page-indicator {
   }
 
   /* main layout */
-  .main .layout-txt { left: 7%; }
+  .main .layout-txt { left: 7%; font-size: 2.344vw; }
   .main .scroll-star { width: 1.953vw; }
   .main .scroll-star::after {
     bottom: -2.604vw;
     width: 2.604vw; height: 2.604vw;
   }
   .main .scroll-txt {
-    /* 얘 긴가민가 */
     min-width: 26.042vw;
     bottom: -11.719vw;
     font-size: 2.344vw;
@@ -892,15 +891,15 @@ html[data-current-page-index="0"] .page-indicator {
     height: 44.271vw;
   }
   .modal .modal-box .modal-img a {
-    right: 2.604vw; bottom: 29.998px;
+    right: 5.804vw; bottom: 3.906vw;
     font-size: 1.563vw;
     padding: 0.651vw 1.302vw;
   }
-  .modal:nth-child(2) .modal-box .modal-img a {
-    right: 7.161vw; bottom: 3.255vw;
-    font-size: 1.302vw;
+  /* .modal:nth-child(2) .modal-box .modal-img a {
+    right: 5.604vw; bottom: 3.906vw;
+    font-size: 1.563vw;
     padding: 0.26vw 1.302vw;
-  }
+  } */
   .modal .modal-box .close-modal {
     top: -3.906vw; right: 0;
     font-size: 2.604vw;
@@ -936,6 +935,17 @@ html[data-current-page-index="0"] .page-indicator {
   
   .port .port-list {
     max-width: none;
-    margin-top: 0; 
+    margin-top: 10.208vw; 
+  }
+  /* modal */
+  .modal .modal-box .modal-img a {
+    right: 4.04vw; bottom: 4.04vw;
+    font-size: 1.302vw;
+    padding: 0.651vw 1.302vw;
+  }
+  .modal:nth-child(2) .modal-box .modal-img a {
+    right: 4.04vw; bottom: 4.04vw;
+    font-size: 1.302vw;
+    padding: 0.26vw 1.302vw;
   }
 }

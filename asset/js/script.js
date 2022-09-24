@@ -129,7 +129,7 @@ $(document).ready(function () {
     
     $($('.page').get().reverse()).each(function(index, node) {
         var $node = $(this);
-        console.log($node);
+        // console.log($node);
         var offsetTop = parseInt($node.attr('data-offset-top'));
         
         if ( scrollTop >= offsetTop ) {
