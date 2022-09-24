@@ -30,7 +30,7 @@ $(document).ready(function () {
 
         setTimeout(function () {
           tyInt = setInterval(typing, 100);
-        }, 100);
+        }, 300);
       } else if (liIndex == liLength - 1) {
         clearInterval(tyInt);
 
@@ -59,7 +59,7 @@ $(document).ready(function () {
       $('html, body').animate({
         scrollTop: $(hash).offset().top
 
-      }, 800, function(){
+      }, 300, function(){
 
         window.location.hash = hash;
       });
@@ -105,21 +105,8 @@ $(document).ready(function () {
    
   });
     
-  // $('#btn-modal-1').on('click',function(){
-  //   $('#modal-1').addClass('on');
-  // });
-  // $('#btn-modal-2').on('click',function(){
-  //   $('#modal-2').addClass('on');
-  // });
-  // $('#btn-modal-3').on('click',function(){
-  //   $('#modal-3').addClass('on');
-  // });
-  // $('.close-modal').on('click',function(){
-  //   $(this).closest('.modal').removeClass('on');
-  // });
   var modal = "";
   $('.desc button').on('click', function(){
-    // console.log('클릭');
     modal = $(this).data('modal'); // 클릭한 아이의 data-modal 값 저장
     $('#' + modal).addClass('on');
   });
@@ -129,26 +116,20 @@ $(document).ready(function () {
 
   // 인디케이트 메뉴
   
-  $('.page-indicator  ul > li > a').click(function(e) {
-    var href = $(this).attr('href');
+  // $('.page-indicator  ul > li > a').click(function(e) {
+  //   var href = $(this).attr('href');    
+  //   var targetTop = $(href).offset().top;
     
-    var targetTop = $(href).offset().top;
-    
-    /*
-    // 한번에 가도록 하는 방법
-    $(window).scrollTop(targetTop);
-    */
-    
-    $('html').stop().animate({scrollTop:targetTop}, 300);
-    
-    e.preventDefault();
-  });
+  //   $('html').stop().animate({scrollTop:targetTop}, 300); //이 부분 충돌나서 버튼클릭 시 오류남 
+  //   e.preventDefault();
+  // });
 
-  function Page__updateIndicatorActive() {
-      var scrollTop = $(window).scrollTop();
+  function page__updateIndicatorActive() {
+    var scrollTop = $(window).scrollTop();
     
     $($('.page').get().reverse()).each(function(index, node) {
         var $node = $(this);
+        console.log($node);
         var offsetTop = parseInt($node.attr('data-offset-top'));
         
         if ( scrollTop >= offsetTop ) {
@@ -163,7 +144,7 @@ $(document).ready(function () {
   }
 
   // 각 페이지의 offsetTop 속성을 업데이트
-  function Page__updateOffsetTop() {
+  function page__updateOffsetTop() {
     
     $('.page').each(function(index, node) {
         var $page = $(node);
@@ -172,18 +153,18 @@ $(document).ready(function () {
         $page.attr('data-offset-top', offsetTop);
     });
 
-    Page__updateIndicatorActive();
+    page__updateIndicatorActive();
   }
 
-  function Page__init() {
-    Page__updateOffsetTop();
+  function page__init() {
+    page__updateOffsetTop();
   }
 
   // 초기화
-  Page__init();
+  page__init();
 
-  $(window).resize(Page__updateOffsetTop);
-  $(window).scroll(Page__updateIndicatorActive);
+  $(window).resize(page__updateOffsetTop);
+  $(window).scroll(page__updateIndicatorActive);
 
 
 });
